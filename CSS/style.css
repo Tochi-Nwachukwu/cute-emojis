@@ -1,0 +1,783 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-left: 90px;
+  background: #aa076b; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #61045f,
+    #aa076b
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #61045f,
+    #aa076b
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  overflow: hidden;
+}
+/* *********************************** */
+/* *********************************** */
+/* *********************************** */
+/* Styling of the first Smiley */
+.smiley {
+  width: 300px;
+  height: 300px;
+  background-color: #f3d00c;
+  border-radius: 50%;
+  position: relative;
+  border: 10px solid black;
+}
+
+.glasses-container {
+  height: 80px;
+  width: 100%;
+  position: absolute;
+  top: 110px;
+  display: flex;
+  z-index: 3;
+  transition: 0.8s;
+}
+
+.glasses-container:hover {
+  transform: translateY(30px);
+  cursor: grab;
+}
+
+.glass-left {
+  flex: 1;
+  background-color: rgb(0, 0, 0);
+  border-radius: 0px 0px 70% 70%;
+  overflow: hidden;
+}
+
+.glass-left .glass-shine {
+  height: 100%;
+  width: 20px;
+  z-index: 5;
+  background-color: white;
+  transform: skewX(-20deg);
+  position: absolute;
+  left: 70px;
+  filter: opacity(0.8);
+}
+.glass-right .glass-shine {
+  height: 100%;
+  width: 20px;
+  z-index: 5;
+  background-color: white;
+  transform: skewX(-20deg);
+  position: absolute;
+  left: 210px;
+  filter: opacity(0.8);
+}
+
+.glass-right {
+  flex: 1;
+  background-color: black;
+  border-radius: 0px 0px 70% 70%;
+  overflow: hidden;
+}
+
+.smiley .eyes {
+  height: 80px;
+  width: 100%;
+  position: absolute;
+  top: 110px;
+  display: flex;
+}
+
+.smiley .eyes .eye-left {
+  flex: 1;
+  background-color: white;
+  border-radius: 0px 0px 70% 70%;
+  margin: 10px;
+  border-top: 5px solid black;
+}
+.smiley .eyes .eye-right {
+  flex: 1;
+  background-color: white;
+  border-radius: 0px 0px 70% 70%;
+  margin: 10px;
+  border-top: 5px solid black;
+}
+
+.smiley .eyes .eye-left .eye-ball {
+  height: 50px;
+  width: 50px;
+  border-radius: 0px 30px 30px 30px;
+  background-color: black;
+}
+.smiley .eyes .eye-right .eye-ball {
+  height: 50px;
+  width: 50px;
+  border-radius: 0px 30px 30px 30px;
+  background-color: black;
+}
+
+.mouth {
+  width: 80px;
+  height: 40px;
+  background-color: #f3d00c;
+  position: absolute;
+  top: 220px;
+  left: 110px;
+  border-top: 7px solid black;
+  border-radius: 0px 0px 50% 50%;
+}
+
+/* ********************************************************** */
+/* Second Smiley */
+.smiley-2 {
+  width: 300px;
+  height: 300px;
+  background-color: #f3d00c;
+  border-radius: 50%;
+  position: relative;
+  border: 10px solid black;
+}
+
+.smiley-2 .eyes {
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  top: 70px;
+  justify-content: space-evenly;
+  overflow: hidden;
+  transition: 0.8s;
+}
+
+.smiley-2 .eyes:hover {
+  height: 200px;
+}
+.smiley-2 .eyes .eye-left {
+  width: 100px;
+  height: 130px;
+  margin: 5px;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+  border: 5px solid black;
+  overflow: hidden;
+}
+.smiley-2 .eyes .eye-right {
+  width: 100px;
+  height: 130px;
+  margin: 5px;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+  border: 5px solid black;
+  overflow: hidden;
+}
+
+.smiley-2 .eyes .eye-left .eye-ball {
+  height: 80px;
+  width: 80px;
+  background-color: dodgerblue;
+  border-radius: 50%;
+  position: absolute;
+  left: 10px;
+  overflow: hidden;
+}
+.smiley-2 .eyes .eye-right .eye-ball {
+  height: 80px;
+  width: 80px;
+  background-color: dodgerblue;
+  border-radius: 50%;
+  position: absolute;
+  left: 10px;
+  overflow: hidden;
+}
+
+.smiley-2 .eyes .eye-left .eye-ball .shine {
+  height: 50px;
+  width: 50px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  position: absolute;
+  left: 20px;
+}
+.smiley-2 .eyes .eye-right .eye-ball .shine {
+  height: 50px;
+  width: 50px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  position: absolute;
+  left: 20px;
+}
+
+.blush {
+  height: 70px;
+  width: 100%;
+  display: flex;
+
+  position: relative;
+  top: 200px;
+  justify-content: space-evenly;
+}
+
+.blush .left-blush {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.404);
+  margin: 10px;
+  filter: blur(10px);
+}
+.blush .right-blush {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.507);
+  margin: 10px;
+  filter: blur(10px);
+}
+/* ***************************************** */
+
+/* Smiley 3 design */
+
+.smiley-3 {
+  width: 300px;
+  height: 300px;
+  background-color: #f3d00c;
+  border-radius: 50%;
+  position: relative;
+  border: 10px solid black;
+}
+
+.smiley-3 .eyes {
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  top: 70px;
+  justify-content: space-evenly;
+}
+
+.smiley-3 .eyes .eye-left {
+  width: 100px;
+  height: 100%;
+  position: relative;
+  border-bottom: 10px solid black;
+  overflow: hidden;
+}
+.smiley-3 .eyes .eye-right {
+  width: 100px;
+  height: 100%;
+
+  position: relative;
+  border-bottom: 10px solid black;
+  overflow: hidden;
+}
+
+.smiley-3 .eyes .eye-left .top-brow {
+  height: 10px;
+  width: 100%;
+  background-color: black;
+  transform-origin: bottom-left;
+  transform: rotate(30deg);
+  position: absolute;
+  top: 65px;
+  left: 10px;
+}
+.smiley-3 .eyes .eye-right .top-brow {
+  height: 10px;
+  width: 100%;
+  background-color: black;
+  transform-origin: bottom-left;
+  transform: rotate(-30deg);
+  position: absolute;
+  top: 65px;
+  left: -10px;
+}
+
+.mouth-2 {
+  width: 80px;
+  height: 40px;
+  background-color: #f3d00c;
+  position: absolute;
+  top: 220px;
+  left: 100px;
+  border-top: 7px solid black;
+  border-radius: 0px 0px 50% 50%;
+}
+
+.mouth-2:hover {
+  background-color: red;
+}
+
+/* ********************************************************* */
+
+/* Smiley 4 */
+.smiley-4 {
+  width: 300px;
+  height: 300px;
+  background-color: #f3d00c;
+  border-radius: 50%;
+  position: relative;
+  border: 10px solid black;
+  overflow: hidden;
+  position: relative;
+}
+
+.smiley-4 .head-band {
+  height: 500px;
+  width: 500px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 170px;
+  right: -110px;
+}
+
+.smiley-4 .head-band .head-band-1 {
+  height: 500px;
+  width: 500px;
+  background-color: rgb(214, 18, 18);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 30px;
+
+  z-index: 1;
+}
+.smiley-4 .head-band .head-band-2 {
+  height: 500px;
+  width: 500px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 60px;
+
+  z-index: 1;
+}
+.smiley-4 .head-band .head-band-3 {
+  height: 500px;
+  width: 500px;
+  background-color: rgb(255, 0, 0);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 90px;
+
+  z-index: 1;
+}
+
+.smiley-4 .eyes {
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  top: 110px;
+  display: flex;
+}
+
+.smiley-4 .eyes .eye-left {
+  flex: 1;
+  background-color: white;
+  border-radius: 0px 0px 70% 70%;
+  margin: 10px;
+  border-top: 5px solid black;
+  position: relative;
+  overflow: hidden;
+}
+.smiley-4 .eyes .eye-right {
+  flex: 1;
+  background-color: white;
+  border-radius: 0px 0px 70% 70%;
+  margin: 10px;
+  border-top: 5px solid black;
+  position: relative;
+  overflow: hidden;
+}
+
+.smiley-4 .eyes .eye-left .eye-ball {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: black;
+  position: absolute;
+  top: 30px;
+  transition: 0.8s;
+}
+.smiley-4 .eyes .eye-right .eye-ball {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: black;
+  position: absolute;
+  top: 30px;
+  transition: 0.8s;
+}
+
+.smiley-4 .eyes .eye-left .eye-ball:hover {
+  transform: translateX(20px);
+}
+.smiley-4 .eyes .eye-right .eye-ball:hover {
+  transform: translateX(20px);
+}
+
+.smiley-4 .mouth-circle {
+  height: 50px;
+  width: 50px;
+  border: 10px solid black;
+  border-radius: 50%;
+  position: absolute;
+  top: 230px;
+  left: 100px;
+}
+
+.smiley-4-container {
+  position: relative;
+}
+.smiley-4-container .bubble-gum {
+  height: 100px;
+  width: 100px;
+  background-color: pink;
+  border-radius: 50%;
+  position: absolute;
+  top: 230px;
+  left: 50px;
+  transition: 0.8s;
+  filter: opacity(0.8);
+}
+
+.smiley-4-container .bubble-gum:hover {
+  /* transform: scale(2); */
+  animation-name: bubble-pop;
+  animation-duration: 0.8s;
+  animation-timing-function: ease;
+  /* animation-delay: 0.7s; */
+}
+
+@keyframes bubble-pop {
+  0% {
+    transform: scale(0);
+    transform: skewX(0);
+    background-color: pink;
+  }
+  50% {
+    transform: scale(2);
+    /* transform: skewX(40deg); */
+    background-color: rgba(255, 192, 203, 0.596);
+  }
+  100% {
+    transform: scale(3);
+    transform: skewX(90deg);
+    background-color: rgba(255, 217, 223, 0.219);
+    box-shadow: 0px 0px 30px pink;
+  }
+}
+
+/* *********************************************** */
+/* Smiley 5 */
+
+.smiley-5 {
+  width: 300px;
+  height: 300px;
+  background-color: #f3d00c;
+  border-radius: 50%;
+  position: relative;
+  border: 10px solid black;
+  overflow: hidden;
+}
+
+.smiley-5 .hair {
+  height: 500px;
+  width: 500px;
+  background-color: pink;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 200px;
+  right: -110px;
+}
+.smiley-5 .hair .hair-top-1 {
+  height: 500px;
+  width: 500px;
+  background-color: rgba(248, 152, 162, 0.726);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 10px;
+  z-index: 3;
+}
+.smiley-5 .hair .hair-top-2 {
+  height: 500px;
+  width: 500px;
+  background-color: rgba(250, 192, 198, 0.938);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 40px;
+  z-index: 3;
+}
+.smiley-5 .hair .hair-top-3 {
+  height: 500px;
+  width: 500px;
+  background-color: rgba(250, 209, 214, 0.938);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 60px;
+  z-index: 3;
+}
+.smiley-5 .hair .hair-left-1 {
+  height: 500px;
+  width: 500px;
+  background-color: rgb(255, 154, 171);
+  border-radius: 50%;
+  position: absolute;
+  left: -200px;
+  top: 50px;
+}
+.smiley-5 .hair .hair-left-2 {
+  height: 500px;
+  width: 500px;
+  background-color: rgb(245, 186, 186);
+  border-radius: 50%;
+  position: absolute;
+  left: -230px;
+  top: 50px;
+  z-index: 3;
+}
+.smiley-5 .hair .hair-left-3 {
+  height: 500px;
+  width: 500px;
+  background-color: rgb(255, 225, 231);
+  border-radius: 50%;
+  position: absolute;
+  left: -260px;
+  top: 50px;
+  z-index: 4;
+}
+.smiley-5 .hair .hair-right-1 {
+  height: 500px;
+  width: 500px;
+  background-color: rgb(255, 225, 231);
+  border-radius: 50%;
+  position: absolute;
+  left: 260px;
+  top: 50px;
+  z-index: 4;
+}
+.smiley-5 .hair .hair-right-2 {
+  height: 500px;
+  width: 500px;
+  background-color: rgba(245, 186, 186, 0.657);
+  border-radius: 50%;
+  position: absolute;
+  left: 230px;
+  top: 50px;
+  z-index: 3;
+}
+.smiley-5 .hair .hair-right-3 {
+  height: 500px;
+  width: 500px;
+  background-color: rgba(255, 225, 231, 0.74);
+  border-radius: 50%;
+  position: absolute;
+  left: 260px;
+  top: 50px;
+  z-index: 4;
+}
+
+.smiley-5 .eyes {
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  top: 70px;
+  justify-content: space-evenly;
+  overflow: hidden;
+  transition: 0.8s;
+}
+
+.smiley-5 .eyes .eye-left {
+  width: 100px;
+  height: 130px;
+  margin: 5px;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+  border: 5px solid black;
+  overflow: hidden;
+}
+.smiley-5 .eyes .eye-right {
+  width: 100px;
+  height: 130px;
+  margin: 5px;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+  border: 5px solid black;
+  overflow: hidden;
+}
+
+.smiley-5 .eyes .eye-left .eye-ball {
+  height: 80px;
+  width: 80px;
+  background-color: dodgerblue;
+  border-radius: 50%;
+  position: absolute;
+  left: 10px;
+  overflow: hidden;
+}
+.smiley-5 .eyes .eye-right .eye-ball {
+  height: 80px;
+  width: 80px;
+  background-color: dodgerblue;
+  border-radius: 50%;
+  position: absolute;
+  left: 10px;
+  overflow: hidden;
+}
+
+.smiley-5 .eyes .eye-left .eye-ball .shine {
+  height: 50px;
+  width: 50px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  position: absolute;
+  left: 20px;
+}
+.smiley-5 .eyes .eye-right .eye-ball .shine {
+  height: 50px;
+  width: 50px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  position: absolute;
+  left: 20px;
+}
+
+.blush {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  position: relative;
+  top: 180px;
+  justify-content: space-evenly;
+}
+
+.blush .left-blush {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.404);
+  margin: 10px;
+  filter: blur(10px);
+}
+.blush .right-blush {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.507);
+  margin: 10px;
+  filter: blur(10px);
+}
+
+.smiley-5-container {
+  position: relative;
+}
+
+.smiley-5-container .buns {
+  position: absolute;
+  top: 100px;
+  height: 100px;
+  width: 65%;
+}
+
+.smiley-5-container .buns .bun-left {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: pink;
+  right: -50px;
+  z-index: -3;
+}
+.smiley-5-container .buns .bun-right {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: pink;
+  left: -35px;
+  z-index: -3;
+}
+.smiley-5-container .buns .bun-right-sharp {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: pink;
+  left: -55px;
+  z-index: -3;
+  clip-path: polygon(
+    51% 10%,
+    70% 39%,
+    76% 11%,
+    77% 61%,
+    32% 83%,
+    53% 63%,
+    19% 65%,
+    35% 50%,
+    16% 30%,
+    47% 33%
+  );
+  transform: scale(2) rotate(-30deg);
+}
+.smiley-5-container .buns .bun-left-sharp {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: pink;
+  right: -70px;
+  z-index: -3;
+  clip-path: polygon(
+    51% 10%,
+    70% 39%,
+    76% 11%,
+    77% 61%,
+    32% 83%,
+    53% 63%,
+    19% 65%,
+    35% 50%,
+    16% 30%,
+    47% 33%
+  );
+  transform: scale(2) rotate(-210deg);
+}
+
+.smiley-5 .glasses-container .glass-left {
+  background-color: rgba(255, 0, 0, 0.555);
+}
+.smiley-5 .glasses-container .glass-right {
+  background-color: rgba(255, 0, 0, 0.486);
+}
+
+.smiley-5 .eyes .eye-ball-1 {
+  height: 50px;
+  width: 50px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.smiley-5 .eyes .eye-ball-1 .pupil {
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.last-patch h1:nth-child(1) {
+  color: pink;
+  font-size: 102px;
+}
+.last-patch h1:nth-child(2) {
+  color: pink;
+  font-size: 102px;
+}
